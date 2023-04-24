@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+
+  <body>
+    <div class='text-content'>
+      <h1>A template for scrollytelling with scrollama</h1>
+      <p>Open in VS Code, right click the filename, open with live server.</p>
+        <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do sunt aliqua in est.
+        Exercitation consectetur est anim excepteur dolor. Sit qui deserunt proident excepteur aliquip sunt esse ullamco
+        ex ipsum Lorem minim consectetur. Dolor nostrud amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat
+        cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat culpa ullamco proident.
+        In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex incididunt tempor. Ad incididunt esse duis
+        occaecat proident nostrud. Minim non est proident consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing. Minim adipisicing
+        aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur. Amet cillum do laboris nulla.
+      </p>
+    </div>
+
+    <section class="scrolly" id="scroll-model">
+      <div class="sticky-thing">
+        <!-- modelviewer content goes below this line -->
+
+        <model-viewer src="design_house_asset.glb" ar disable-zoom ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+          <div class="progress-bar hide" slot="progress-bar">
+              <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">
+              View in your space
+          </button>
+          <div id="ar-prompt">
+              <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+          </div>
+      </model-viewer>
+      
+
+        <!-- modelviewer content goes above this line -->
+      </div>
+
+      <div class="scrolly-overlay">
+        <div class="step" id="step-one">
+          <p>This is the first step</p>
+        </div>
+        <div class="step" id="step-two">
+          <p>This is the second step.</p>
+        </div>
+        <div class="step" id="step-three">
+          <p>This is the third step.</p>
+        </div>
+        <div class="step" id="step-four">
+          <p>This is step four</p>
+        </div>
+        <div class="step" id="step-five">
+          <p>This is fifth step</p>
+        </div>
+      </div>
+    </section>
+
+    <div class='text-content'>
+      <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do sunt aliqua in est.
+        Exercitation consectetur est anim excepteur dolor. Sit qui deserunt proident excepteur aliquip sunt esse ullamco
+        ex ipsum Lorem minim consectetur. Dolor nostrud amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat
+        cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat culpa ullamco proident.
+        In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex incididunt tempor. Ad incididunt esse duis
+        occaecat proident nostrud. Minim non est proident consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing. Minim adipisicing
+        aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur. Amet cillum do laboris nulla.
+      </p>
+      <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do sunt aliqua in est.
+        Exercitation consectetur est anim excepteur dolor. Sit qui deserunt proident excepteur aliquip sunt esse ullamco
+        ex ipsum Lorem minim consectetur. Dolor nostrud amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat
+        cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat culpa ullamco proident.
+        In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex incididunt tempor. Ad incididunt esse duis
+        occaecat proident nostrud. Minim non est proident consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing. Minim adipisicing
+        aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur. Amet cillum do laboris nulla.
+      </p>
+    </div>
+  
+    <!-- Loads <model-viewer> for browsers: -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+
+    <script>
+      /* Scrollytelling code goes under here */
+
+      var viewer = document.querySelector("model-viewer")
+
+      /*
+      This is an example of how the stepin works.
+      All three values come from the modelview editor
+      */
+      d3.select("#step-one").on("stepin", function () {
+        viewer.cameraTarget = "-50.77m 166.96m -301.69m"
+        viewer.cameraOrbit = "-0.3879deg 64.4deg 2420m"
+        viewer.fieldOfView = "13.66deg"
+      })
+
+      d3.select("#step-two").on("stepin", function () {
+        viewer.cameraTarget = "-3.72m 21.25m 103.52m"
+        viewer.cameraOrbit = "6.536deg 22.5deg 2336m"
+        viewer.fieldOfView = "14.67deg"
+      })
+
+      d3.select("#step-three").on("stepin", function () {
+        viewer.cameraTarget = "606.91m 142.55m 36.86m"
+        viewer.cameraOrbit = "-13.67deg 55.4deg 1952m"
+        viewer.fieldOfView = "12deg"
+      })
+
+    </script>
+
+    <script>
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          step: "#scroll-model .scrolly-overlay .step",
+          offset: 0.75,
+          debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+
+  <body>
+    <div class="text-content">
+      <h1>A template for an interactive 3D model</h1>
+      <p>
+        Open in VS Code, right click the filename, open with live server. Set up using
+        <a href="https://modelviewer.dev/editor/">modelviewer.dev</a>
+      </p>
+      <p>Hotspot CSS can be edited in <code>styles.css</code></p>
+      <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do
+        sunt aliqua in est. Exercitation consectetur est anim excepteur dolor. Sit qui deserunt
+        proident excepteur aliquip sunt esse ullamco ex ipsum Lorem minim consectetur. Dolor nostrud
+        amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat
+        culpa ullamco proident. In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex
+        incididunt tempor. Ad incididunt esse duis occaecat proident nostrud. Minim non est proident
+        consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing.
+        Minim adipisicing aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur.
+        Amet cillum do laboris nulla.
+      </p>
+    </div>
+
+    <!-- modelviewer content goes below this line, pay att'n to camera controls/disable-zoom -->
+
+    <model-viewer src="design_house_asset.glb" ar ar-modes="webxr scene-viewer quick-look" disable-zoom camera-controls poster="poster.webp" shadow-intensity="1" camera-orbit="-0.875deg 46.24deg 3207m" field-of-view="28.07deg">
+      <button class="Hotspot" slot="hotspot-1" data-surface="0 0 177 168 169 0.227 0.140 0.632" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">This is water fountain</div>
+      </button><button class="Hotspot" slot="hotspot-2" data-surface="102 0 33 34 35 0.161 0.458 0.381" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">This is someone's roof</div>
+      </button><button class="Hotspot" slot="hotspot-3" data-surface="113 0 213 214 215 0.225 0.034 0.741" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">A beautiful set of stairs</div>
+      </button><button class="Hotspot" slot="hotspot-4" data-surface="93 0 33 32 238 0.239 0.348 0.413" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Boring wall</div>
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+      </div>
+  </model-viewer>
+    
+  
+    <!-- modelviewer content goes above this line -->
+
+    <div class="text-content">
+      <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do
+        sunt aliqua in est. Exercitation consectetur est anim excepteur dolor. Sit qui deserunt
+        proident excepteur aliquip sunt esse ullamco ex ipsum Lorem minim consectetur. Dolor nostrud
+        amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat
+        culpa ullamco proident. In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex
+        incididunt tempor. Ad incididunt esse duis occaecat proident nostrud. Minim non est proident
+        consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing.
+        Minim adipisicing aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur.
+        Amet cillum do laboris nulla.
+      </p>
+      <p>
+        Amet id elit et labore cillum elit sit deserunt do reprehenderit occaecat. Enim ipsum sit do
+        sunt aliqua in est. Exercitation consectetur est anim excepteur dolor. Sit qui deserunt
+        proident excepteur aliquip sunt esse ullamco ex ipsum Lorem minim consectetur. Dolor nostrud
+        amet ad irure qui ea. Fugiat cupidatat anim aliqua duis cupidatat cupidatat nisi.
+      </p>
+      <p>
+        Occaecat eu magna id aliqua. Amet cupidatat officia enim eu sunt pariatur tempor consequat
+        culpa ullamco proident. In voluptate ad sit enim ipsum dolore. Aliquip laboris ea non ex
+        incididunt tempor. Ad incididunt esse duis occaecat proident nostrud. Minim non est proident
+        consequat excepteur nulla ad esse exercitation amet id.
+      </p>
+      <p>
+        Dolor consectetur sint excepteur officia quis do mollit commodo deserunt dolor adipisicing.
+        Minim adipisicing aliqua ipsum voluptate elit amet do do ullamco Lorem Lorem consectetur.
+        Amet cillum do laboris nulla.
+      </p>
+    </div>
+
+    <!-- Loads <model-viewer> for browsers: -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </body>
+</html>
